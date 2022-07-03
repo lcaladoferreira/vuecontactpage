@@ -1,0 +1,26 @@
+<div id="app">
+  <div :class="['bg', bg]">
+    <header>
+      <nav>
+        <ul>
+          <li><a class="link-bio" href="#bio" @click="bg = 'bio'">Bio</a></li>
+          <li><a class="link-projects" href="#projects" @click="bg = 'projects'">Projects</a></li>
+          <li><a class="link-find-me" href="#findme" @click="bg = 'find-me'">Find Me</a></li>
+        </ul>
+      </nav>
+      <div class="transition transition-bio"></div>
+      <div class="transition transition-projects"></div>
+      <div class="transition transition-find-me"></div>
+      <h1>Vue.js</h1>
+    </header>
+    <div class="dots dots1"></div>
+    <div class="dots dots2"></div>
+    <main>
+      <transition name="slide-fade" mode="out-in">
+        <p key="bio" v-if="bg==='bio'">Leandro Calado is an MBA student in Front-End with certifications in Full Stack Node, Responsive Design, JavaScript (ES6) and HTML5.</p>
+        <p key="projects" v-if="bg==='projects'"> See <a href="https://github.com/lcaladoferreira" target="_blank" rel="noopener">my GitHub</a> to have access to my public repository.</p>
+        <p key="find-me" v-if="bg==='find-me'">Follow me on <a href="https://www.linkedin.com/in/lcaladoferreira/" target="_blank" rel="noopener">my LinkedIn</a> to keep in touch about new projects.</p>
+      </transition>
+    </main>
+  </div>
+</div>
